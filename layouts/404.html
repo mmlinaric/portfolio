@@ -1,0 +1,117 @@
+{{ define "main" }}
+  <div class="kernel-panic">
+    <pre>
+<span class="panic-title">Kernel Panic - Not Syncing: Page Not Found</span>
+
+<span class="panic-message">Oops! The page you're looking for seems to have crashed.</span>
+
+<span class="panic-details">Error Code: 404</span>
+<span class="panic-details">Severity: CRITICAL</span>
+<span class="panic-details">System: Portfolio Website</span>
+
+<span class="panic-trace">Call Trace:</span>
+<span class="panic-trace-indent">[&lt;ffffffff&gt;] user_requested_page+0x0/0x100</span>
+<span class="panic-trace-indent">[&lt;ffffffff&gt;] hugo_router_lookup+0x42/0x80</span>
+<span class="panic-trace-indent">[&lt;ffffffff&gt;] page_not_found_handler+0x1a/0x30</span>
+<span class="panic-trace-indent">[&lt;ffffffff&gt;] kernel_panic+0x0/0x10</span>
+
+<span class="panic-suggestion">Suggested Recovery:</span>
+<span class="panic-suggestion-indent">1. Check the URL for typos</span>
+<span class="panic-suggestion-indent">2. Return to the homepage</span>
+<span class="panic-suggestion-indent">3. Contact system administrator if problem persists</span>
+
+<span class="panic-footer">Press any key to reboot... or just click below</span>
+    </pre>
+    
+    <div class="panic-actions">
+      <a href="/" class="panic-button">Return to Home</a>
+    </div>
+  </div>
+
+  <style>
+    .kernel-panic {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+      border: 2px solid #f00;
+      border-radius: 5px;
+      margin: 2rem 0;
+      position: relative;
+    }
+    
+    .kernel-panic pre {
+      margin: 0;
+      white-space: pre-wrap;
+    }
+    
+    .panic-title {
+      color: #ff0000;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .panic-message {
+      color: #ffff00;
+      margin: 1rem 0;
+      display: block;
+    }
+    
+    .panic-details {
+      color: #00ffff;
+      display: block;
+      margin-left: 2rem;
+    }
+    
+    .panic-trace {
+      color: #ff00ff;
+      margin-top: 1rem;
+      display: block;
+    }
+    
+    .panic-trace-indent {
+      display: block;
+      margin-left: 2rem;
+      color: #ffffff;
+    }
+    
+    .panic-suggestion {
+      color: #00ff00;
+      margin-top: 1rem;
+      display: block;
+    }
+    
+    .panic-suggestion-indent {
+      display: block;
+      margin-left: 2rem;
+      color: #ffffff;
+    }
+    
+    .panic-footer {
+      color: #ffa500;
+      margin-top: 1rem;
+      display: block;
+    }
+    
+    .panic-actions {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    
+    .panic-button {
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border: 1px solid #666;
+      border-radius: 3px;
+      margin: 0 0.5rem;
+      display: inline-block;
+    }
+    
+    .panic-button:hover {
+      background-color: #444;
+      border-color: #888;
+    }
+  </style>
+{{ end }}
