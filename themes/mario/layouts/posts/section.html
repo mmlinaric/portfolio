@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  {{ range .Pages.ByPublishDate.Reverse }}
+    <section>
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ if not .Date.IsZero }}
+        <time>{{ .Date | time.Format ":date_long" }}</time>
+      {{ end }}
+      <p>{{ .Summary }}</p>
+    </section>
+  {{ end }}
+{{ end }}
