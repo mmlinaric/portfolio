@@ -5,6 +5,7 @@ const COMMANDS = {
         '  ls           — list pages',
         '  skills       — technical skills',
         '  contact      — how to reach me',
+        '  cd <page>    — change directory (navigate to page)',
         '  clear        — clear terminal',
         '  exit         — close terminal',
     ],
@@ -32,6 +33,30 @@ const COMMANDS = {
         'email:    mario@mariomlinaric.xyz',
         'github:   github.com/mmlinaric',
     ],
+    cd: (page) => {
+        const pages = {
+            'home': '/',
+            'about': '/about/',
+            'skills': '/skills/',
+            'projects': '/projects/',
+            'blog': '/posts/',
+            'contact': '/contact/',
+            'root': '/',
+            '/': '/'
+        };
+        
+        if (!page) {
+            return ['usage: cd <page>', 'available pages: home, about, skills, projects, blog, contact'];
+        }
+        
+        const target = pages[page.toLowerCase()];
+        if (target) {
+            window.location.href = target;
+            return '__EXIT__';
+        } else {
+            return [`cd: no such directory: ${page}`];
+        }
+    },
     clear: () => '__CLEAR__',
     exit: () => '__EXIT__',
 };
@@ -82,11 +107,13 @@ function initTerminal() {
             // echo the command
             printLines(output, [`mario@portfolio:~$ ${raw}`], 'cmd');
 
-            const cmd = raw.toLowerCase().split(' ')[0];
+            const parts = raw.toLowerCase().split(' ');
+            const cmd = parts[0];
+            const args = parts.slice(1);
             const handler = COMMANDS[cmd];
 
             if (handler) {
-                const result = handler();
+                const result = handler(args.length > 0 ? args[0] : undefined);
                 if (result === '__CLEAR__') {
                     output.innerHTML = '';
                 } else if (result === '__EXIT__') {
