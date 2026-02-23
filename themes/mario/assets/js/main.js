@@ -1,7 +1,3 @@
-// terminal.js — fake interactive terminal for status bar
-// Place this file in your Hugo static/js/ folder
-// Add <script src="/js/terminal.js"></script> before </body>
-
 const COMMANDS = {
     help: () => [
         'available commands:',
@@ -26,104 +22,21 @@ const COMMANDS = {
         'drwxr-xr-x  contact/',
     ],
     skills: () => [
-        'languages:   python, go, bash, javascript',
-        'devops:      docker, kubernetes, ansible, terraform',
-        'systems:     linux, nginx, postgresql, redis',
-        'tools:       git, vim, tmux',
+        'languages:   Python, Java, Bash, PHP',
+        'devops:      Docker, Ansible, GitLab CI',
+        'systems:     Linux, Nginx, PostgreSQL, Redis',
+        'networking:  MikroTik, DNS, HTTP, SSL/TLS, load balancing, firewalls',
+        'tools:       Git, vim, Intellij, tmux'
     ],
     contact: () => [
-        'email:    mario@example.com',
-        'github:   github.com/mario',
-        'linkedin: linkedin.com/in/mario',
+        'email:    mario@mariomlinaric.xyz',
+        'github:   github.com/mmlinaric',
     ],
     clear: () => '__CLEAR__',
     exit: () => '__EXIT__',
 };
 
 const UNKNOWN = (cmd) => [`command not found: ${cmd}`, `type 'help' for available commands`];
-
-// --- build the terminal overlay ---
-function createTerminal() {
-    const overlay = document.createElement('div');
-    overlay.id = 'term-overlay';
-    overlay.innerHTML = `
-        <div id="term-output"></div>
-        <div id="term-input-line">
-            <span id="term-prompt">mario@portfolio:~$</span>
-            <input id="term-input" type="text" autocomplete="off" spellcheck="false" autofocus />
-        </div>
-    `;
-    document.body.appendChild(overlay);
-
-    const style = document.createElement('style');
-    style.textContent = `
-        #term-overlay {
-            display: none;
-            position: fixed;
-            bottom: 26px; /* sits just above status bar */
-            left: 0;
-            width: 100%;
-            max-height: 260px;
-            background: #0d0d0d;
-            border-top: 1px solid #333;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.85rem;
-            color: #e0e0e0;
-            box-sizing: border-box;
-            flex-direction: column;
-            z-index: 999;
-        }
-        #term-overlay.open {
-            display: flex;
-        }
-        #term-output {
-            flex: 1;
-            overflow-y: auto;
-            padding: 10px 12px 4px;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-        .term-line {
-            white-space: pre;
-            line-height: 1.5;
-        }
-        .term-line.cmd {
-            color: #569cd6;
-        }
-        .term-line.out {
-            color: #aaa;
-        }
-        .term-line.err {
-            color: #f48771;
-        }
-        #term-input-line {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 12px;
-            border-top: 1px solid #222;
-        }
-        #term-prompt {
-            color: #569cd6;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        #term-input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #e0e0e0;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.85rem;
-            caret-color: #e0e0e0;
-        }
-    `;
-    document.head.appendChild(style);
-
-    return overlay;
-}
 
 function printLines(output, lines, type = 'out') {
     lines.forEach(text => {
@@ -137,9 +50,9 @@ function printLines(output, lines, type = 'out') {
 
 function initTerminal() {
     const statusBar = document.querySelector('.status-bar');
-    if (!statusBar) return;
+    if (!statusBar) console.error('Status bar element not found. Terminal will not work.');
 
-    const overlay = createTerminal();
+    const overlay = document.getElementById('term-overlay');
     const output = document.getElementById('term-output');
     const input = document.getElementById('term-input');
     const history = [];

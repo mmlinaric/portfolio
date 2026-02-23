@@ -71,6 +71,10 @@ h1::before {
     color: #569cd6;
 }
 
+p, li {
+    text-align: justify;
+}
+
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
