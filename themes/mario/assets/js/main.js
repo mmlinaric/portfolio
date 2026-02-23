@@ -120,3 +120,15 @@ function initTerminal() {
 }
 
 document.addEventListener('DOMContentLoaded', initTerminal);
+
+// Navigation toggle for mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('nav-menu');
+      
+    if (toggle && menu) {
+        toggle.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+    }
+});
