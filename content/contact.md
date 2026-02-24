@@ -7,3 +7,65 @@ Feel free to reach out to me for any inquiries, collaborations, or just to say h
 
 - **Email:** [mario@mariomlinaric.xyz](mailto:mario@mariomlinaric.xyz)
 - **GitHub:** [github.com/mmlinaric](https://github.com/mmlinaric)
+
+## PGP Key
+
+For secure communication, you can use my PGP public key:
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+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
+=AJ1w
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+**Fingerprint:** `4E19 023D 1CE7 A5B3 F74D 39CE 290A 45B6 B4F5 0A5A`
+
+You can also verify my key on [keys.openpgp.org](https://keys.openpgp.org/search?q=mario%40mariomlinaric.xyz)
+
