@@ -5,7 +5,7 @@ title = 'Contact'
 
 Feel free to reach out to me for any inquiries, collaborations, or just to say hello!
 
-- **Email:** [mario@mariomlinaric.xyz](mailto:mario@mariomlinaric.xyz)
+- **Email:** [mario@mmlinaric.com](mailto:mario@mmlinaric.com)
 - **GitHub:** [github.com/mmlinaric](https://github.com/mmlinaric)
 
 ## PGP Key
@@ -67,5 +67,4 @@ tydiBKD339YHE/fFmS/vHk84cXL7x/hTuSbcN2i5ua94z2FxW3E5bxtWdDuYOYu0
 
 **Fingerprint:** `4E19 023D 1CE7 A5B3 F74D 39CE 290A 45B6 B4F5 0A5A`
 
-You can also verify my key on [keys.openpgp.org](https://keys.openpgp.org/search?q=mario%40mariomlinaric.xyz)
 

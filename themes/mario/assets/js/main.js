@@ -30,7 +30,7 @@ const COMMANDS = {
         'tools:       Git, vim, Intellij, tmux'
     ],
     contact: () => [
-        'email:    mario@mariomlinaric.xyz',
+        'email:    mario@mmlinaric.com',
         'github:   github.com/mmlinaric',
     ],
     cd: (page) => {
