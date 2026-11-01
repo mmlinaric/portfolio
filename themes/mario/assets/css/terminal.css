@@ -70,3 +70,89 @@
 	font-size: 0.85rem;
 	caret-color: #e0e0e0;
 }
+
+/* 404 page (kept out of the page itself, so the Content-Security-Policy needs no inline styles) */
+.kernel-panic {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  padding: 2rem;
+  border: 2px solid #f00;
+  border-radius: 5px;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.kernel-panic pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.panic-title {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.panic-message {
+  color: #ffff00;
+  margin: 1rem 0;
+  display: block;
+}
+
+.panic-details {
+  color: #00ffff;
+  display: block;
+  margin-left: 2rem;
+}
+
+.panic-trace {
+  color: #ff00ff;
+  margin-top: 1rem;
+  display: block;
+}
+
+.panic-trace-indent {
+  display: block;
+  margin-left: 2rem;
+  color: #ffffff;
+}
+
+.panic-suggestion {
+  color: #00ff00;
+  margin-top: 1rem;
+  display: block;
+}
+
+.panic-suggestion-indent {
+  display: block;
+  margin-left: 2rem;
+  color: #ffffff;
+}
+
+.panic-footer {
+  color: #ffa500;
+  margin-top: 1rem;
+  display: block;
+}
+
+.panic-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.panic-button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 1px solid #666;
+  border-radius: 3px;
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.panic-button:hover {
+  background-color: #444;
+  border-color: #888;
+}
