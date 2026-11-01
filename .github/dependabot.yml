@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # Base images (hugomods/hugo, nginxinc/nginx-unprivileged): new versions as PRs.
+  # Patch rebuilds of the same tags come from the weekly workflow run.
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

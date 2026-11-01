@@ -3,6 +3,13 @@ name: Build and publish container image
 on:
   push:
     branches: [main]
+  # Build without pushing, to catch a broken Dockerfile before it lands.
+  pull_request:
+    branches: [main]
+  # Weekly rebuild: the base images use floating tags, so this picks up their
+  # security patches (e.g. Alpine's OpenSSL) without a code change.
+  schedule:
+    - cron: "0 3 * * 1"
   workflow_dispatch: {}
 
 env:
@@ -47,7 +54,7 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
