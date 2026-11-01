@@ -5,7 +5,7 @@ WORKDIR /src
 COPY . .
 RUN hugo --minify --gc
 
-FROM nginxinc/nginx-unprivileged:1.30-alpine-slim
+FROM nginxinc/nginx-unprivileged:1.31-alpine-slim
 COPY --from=build /src/public /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 8080
